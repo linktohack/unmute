@@ -572,7 +572,7 @@ const Unmute = () => {
       <div className="relative flex w-full min-h-screen flex-col text-white bg-background items-center">
         {/* z-index on the header to put it in front of the circles */}
         <header className="static md:absolute max-w-6xl px-3 md:px-8 right-0 flex justify-end z-10">
-          <UnmuteHeader />
+          {/* <UnmuteHeader /> */}
         </header>
         <div
           className={clsx(

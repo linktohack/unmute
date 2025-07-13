@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import ConsentModal from "./ConsentModal";
 
 export const metadata: Metadata = {
-  title: "Unmute by Kyutai",
+  title: "Talk",
   description: "Make LLMs listen and speak.",
 };
 

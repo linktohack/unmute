@@ -54,7 +54,7 @@ const CouldNotConnect = ({ healthStatus }: { healthStatus: HealthStatus }) => {
 
   return (
     <div className="w-full h-full flex flex-col gap-12 items-center justify-center bg-background">
-      <UnmuteHeader />
+      {/* <UnmuteHeader /> */}
       <div className="text-center text-xl">
         <h1 className="text-3xl mb-4">{"Couldn't connect :("}</h1>
         <p>Service status:</p>
