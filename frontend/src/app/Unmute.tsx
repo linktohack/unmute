@@ -53,6 +53,7 @@ const Unmute = () => {
   const [errors, setErrors] = useState<ErrorItem[]>([]);
   const [savedMemories, setSavedMemories] = useState<string[]>([]);
   const [closeModalSignal, setCloseModalSignal] = useState(0);
+  const [isThinking, setIsThinking] = useState(false);
 
   useWakeLock(shouldConnect);
   const { analyticsOnDownloadRecording } = useGoogleAnalytics({
@@ -252,7 +253,9 @@ const Unmute = () => {
       ]);
     } else if (data.type === "response.function_call_arguments.delta") {
       // We can notify the model that the function is going to take a while here
+      setIsThinking(true);
     } else if (data.type === "response.done") {
+      setIsThinking(false);
       for (const call of data.response.output) {
         if (call.type !== 'function_call') {
           continue;
@@ -518,6 +521,7 @@ const Unmute = () => {
             analyserNode={audioProcessor.current?.outputAnalyser || null}
             onCircleClick={onConnectButtonPress}
             isConnected={shouldConnect}
+            isThinking={isThinking}
           />
           <PositionedAudioVisualizer
             chatHistory={chatHistory}

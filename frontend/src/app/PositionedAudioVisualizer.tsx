@@ -9,12 +9,14 @@ const PositionedAudioVisualizer = ({
   analyserNode,
   isConnected,
   onCircleClick,
+  isThinking,
 }: {
   chatHistory: ChatMessage[];
   role: "user" | "assistant";
   analyserNode: AnalyserNode | null;
   isConnected: boolean;
   onCircleClick?: () => void;
+  isThinking?: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const isAssistant = role === "assistant";
@@ -26,6 +28,7 @@ const PositionedAudioVisualizer = ({
     isConnected,
     showPlayButton: !!onCircleClick,
     clearCanvas: true,
+    isThinking,
   });
 
   // Resize the canvas to fit its parent element

@@ -157,6 +157,7 @@ export interface UseAudioVisualizerCircleOptions {
   showPlayButton?: boolean;
   positioning?: Positioning;
   clearCanvas: boolean;
+  isThinking?: boolean;
 }
 
 export const useAudioVisualizerCircle = (
@@ -171,11 +172,17 @@ export const useAudioVisualizerCircle = (
     showPlayButton = false,
     positioning,
     clearCanvas,
+    isThinking = false,
   } = options;
 
   const isActive = getIsActive(chatHistory, role);
   const isAssistant = role === "assistant";
-  const colorName = isAssistant ? "color-green" : "color-white";
+  const colorName =
+    isAssistant && isThinking
+      ? "color-red"
+      : isAssistant
+      ? "color-green"
+      : "color-white";
 
   const animationRef = useRef<number>(-1);
   const cicleBuffer = useRef<Float32Array>(new Float32Array(256));
