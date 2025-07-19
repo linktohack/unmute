@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/Projects/unmute/dockerless/
+
+./start_tts.sh

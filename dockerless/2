@@ -1,0 +1,8 @@
+#!/bin/bash
+cd ~/Projects/unmute/dockerless/
+
+export HTTP_HOST=talk.tortoise-pancake.ts.net
+export SSL_KEYFILE=talk.tortoise-pancake.ts.net.key
+export SSL_CERTFILE=talk.tortoise-pancake.ts.net.crt
+
+./start_frontend.sh

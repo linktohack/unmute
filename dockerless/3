@@ -1,0 +1,11 @@
+#!/bin/bash
+cd ~/Projects/unmute/dockerless/
+
+export HTTP_HOST=talk.tortoise-pancake.ts.net
+export SSL_KEYFILE=talk.tortoise-pancake.ts.net.key
+export SSL_CERTFILE=talk.tortoise-pancake.ts.net.crt
+
+export KYUTAI_LLM_URL=http://talk:8000
+export NEWSAPI_API_KEY=33a78b8537054648935bec941776dde8
+
+./start_backend.sh
