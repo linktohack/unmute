@@ -8,6 +8,7 @@ cd "$(dirname "$0")/"
 
 # Uncomment and run once to have the dependencies installed, but then don't sync again
 # uv venv
+# uv sync
 # uv pip install -U "git+https://git@github.com/kyutai-labs/moshi.git#egg=moshi&subdirectory=moshi"
 # uv pip uninstall torch torchvision torchaudio
 # uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
